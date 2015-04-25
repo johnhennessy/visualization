@@ -6,4 +6,6 @@ package elysium.visualization;
 public interface Canvas {
     void drawPoint(int x, int y, int palletColor);
     void update();
+    int getWidth();
+    int getHeight();
 }
