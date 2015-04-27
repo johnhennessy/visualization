@@ -2,6 +2,8 @@ package elysium.visualization;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 /**
@@ -15,7 +17,7 @@ public class SwingCanvas extends JFrame implements Canvas {
     private Graphics graphics;
     private int[] rgbArray;
 
-    public SwingCanvas(int width, int height, Pallet pallet) {
+    public SwingCanvas(int width, int height, Pallet pallet, MouseListener mouseListener, KeyListener keyListener) {
         this.width = width;
         this.height = height;
         this.pallet = pallet;
@@ -54,6 +56,9 @@ public class SwingCanvas extends JFrame implements Canvas {
 //        t.start();
 
         super.setVisible(true);
+
+        addMouseListener(mouseListener);
+        addKeyListener(keyListener);
     }
 
     public void drawPoint(int x, int y, int palletColor) {
